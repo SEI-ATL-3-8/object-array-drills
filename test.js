@@ -103,19 +103,6 @@ describe('THE BAND', () => {
 });
 
 
-//exersice 4
-describe('Give it the property albums and set it to the array stored in the variable talkingHeadsAlbums', () => {
-  it("exists", () => {
-    expect((band.albums)).to.eq(("talkingHeadAlbums"));
-  });
-});
-
-//exersice 5
-describe("Add Tiny Weymouth, Chris Franz and Jerry Harrison to the members array", () => {
-  it("exists", () => {
-    expect((band.members)).to.eq(['Tiny Weymouth','Chris Franz','Jerry Herrison']);
-  });
-});
 
 
 
