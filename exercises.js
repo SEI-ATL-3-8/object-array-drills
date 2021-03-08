@@ -24,11 +24,11 @@ const album1 = {
 // 1. Retrieve the string "Sire" from album1, and save it as 
 //    albumOneLabel.
 
-const albumOneLabel = album1.albumDetails.label
+
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
 
-album1.title = "Talking Heads: 77";
+
 
 const album2 = {
   title: "More Songs About Buildings and Food",
@@ -52,16 +52,12 @@ const album3 = {
 //    album3's formats
 // Check out the Array.push method!
 
-album3.albumDetails.formats.push(album2.albumDetails.formats[0]);
 
 
 
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
 
-album3.released = new Date("August 3, 1979");
-
-console.log(album3.albumDetails.released)
 
 const album4 = {
   title: "Remain in Light",
@@ -100,7 +96,7 @@ const album6 = {
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
 
-album6.albumDetails.labels = ["Sire", "emi".toUpperCase()];
+
 
 const album7 = {
   title: "True Stories",
@@ -115,7 +111,7 @@ const album7 = {
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
 // google js array split!
 
-album7.albumDetails.labels = album7.albumDetails.labels.split(", ");
+
 
 const album8 = {
   title: "Naked",
@@ -142,7 +138,9 @@ const talkingHeadsAlbums = [
 /////////////////////////////////////////////////////
 
 // 1. Create an object literal called `band`.
-let band = {};
+let band = {
+  name = "Talking Heads",
+};
 
 // 2. Give it the property `name` and set it to "Talking Heads"
 band.name = "Talking Heads";

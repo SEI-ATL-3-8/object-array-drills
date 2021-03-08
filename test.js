@@ -7,6 +7,7 @@ describe('Retrieve the string "Sire" from album1', () => {
     expect(albumOneLabel).to.eq("Sire");
   });
 });
+
 //exersice 2
 describe('Change the title of album1 from Talking Heads to Talking Heads: 77', () => {
   it("exists", () => {
@@ -62,31 +63,43 @@ describe(`Convert album7's 'labels' property from the string value`, () => {
 });
 
 
+
+
+
 //Part 3
 
 //exersice 1
 
-describe(`Create an object literal called band`, () => {
+describe('THE BAND', () => {
+  //exersice 1
   it("exists", () => {
-    expect(band = {}).to.eq(band = {});
+    expect(band = {}).to.be.a('object');
   });
-});
-
-//exersice 2
-
-describe('Give it the property name and set it to Talking Heads', () => {
-  it("exists", () => {
-    expect((band.name)).to.eq(("Talking Heads"));
+  //exercise 2
+  it('should have property `name`', () => {
+    expect(band).to.have.property('name')
+    expect(band.name).to.eq('Talking Heads') 
+  })
+  //exercise 3
+  it('should have property `member`',() =>{
+    expect(band).to.have.property(`member`);
+    expect(band.memebr).to.eq.a(`array`);
   });
-});
+  //exercise 4
+  it('should have property `albums`', () =>{
+    expect(band).to.have.property('albums');
+    expect(band.albums).to.eq('talkingHeadsAlbums');
+  })
+  it("should have Tiny Weymouth, Chris Franz and Jerry Harrison in band member", () => {
+    expect(band.members).to.eq([
+      "David Byrne",
+      "Tiny Weymouth",
+      "Chris Franz",
+      "Jerry Harrison",
+    ]);
+  })
 
 
-//exersice 3
-
-describe(`Give it the property members and set it to an array with a single string, "David Byrne", in it`, () => {
-  it("exists", () => {
-    expect((band.members)).to.eq(["David Bryne"]);
-  });
 });
 
 
@@ -103,4 +116,14 @@ describe("Add Tiny Weymouth, Chris Franz and Jerry Harrison to the members array
     expect((band.members)).to.eq(['Tiny Weymouth','Chris Franz','Jerry Herrison']);
   });
 });
+
+
+
+
+
+
+
+
+
+
 
