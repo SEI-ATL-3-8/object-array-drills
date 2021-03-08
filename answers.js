@@ -126,7 +126,7 @@ const talkingHeadsAlbums = [
 /////////////////////////////////////////////////////
 
 // 1. Create an object literal called `band`.
-let band = {};
+const band = {};
 
 // 2. Give it the property `name` and set it to "Talking Heads"
 band.name = "Talking Heads";

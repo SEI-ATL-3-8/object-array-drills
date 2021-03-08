@@ -73,7 +73,7 @@ describe(`Convert album7's 'labels' property from the string value`, () => {
 describe('THE BAND', () => {
   //exersice 1
   it("exists", () => {
-    expect(band = {}).to.be.a('object');
+    expect(band).to.be.an('object');
   });
   //exercise 2
   it('should have property `name`', () => {
@@ -81,25 +81,23 @@ describe('THE BAND', () => {
     expect(band.name).to.eq('Talking Heads') 
   })
   //exercise 3
-  it('should have property `member`',() =>{
-    expect(band).to.have.property(`member`);
-    expect(band.memebr).to.eq.a(`array`);
+  it('should have property `members`',() =>{
+    expect(band).to.have.property(`members`);
+    expect(band.members).to.be.an(`array`);
   });
   //exercise 4
   it('should have property `albums`', () =>{
     expect(band).to.have.property('albums');
-    expect(band.albums).to.eq('talkingHeadsAlbums');
+    expect(band.albums).to.eq(talkingHeadsAlbums);
   })
-  it("should have Tiny Weymouth, Chris Franz and Jerry Harrison in band member", () => {
-    expect(band.members).to.eq([
+  it("should have Tiny Weymouth, Chris Franz and Jerry Harrison in band members", () => {
+    expect(band.members).to.deep.eq([
       "David Byrne",
       "Tiny Weymouth",
       "Chris Franz",
       "Jerry Harrison",
     ]);
   })
-
-
 });
 
 

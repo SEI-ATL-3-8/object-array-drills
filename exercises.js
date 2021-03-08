@@ -71,8 +71,7 @@ const album4 = {
 
 // 5. Add the label "Sire" to album4's details
 
-album4.albumDetails.label = "Sire";
-console.log(album4.albumDetails.label);
+
 
 const album5 = {
   title: "Speaking in Tongues",
@@ -138,12 +137,10 @@ const talkingHeadsAlbums = [
 /////////////////////////////////////////////////////
 
 // 1. Create an object literal called `band`.
-let band = {
-  name = "Talking Heads",
-};
+const band = {};
 
 // 2. Give it the property `name` and set it to "Talking Heads"
-band.name = "Talking Heads";
+ band.name = "Talking Heads";
 
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
