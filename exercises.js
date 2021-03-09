@@ -317,7 +317,7 @@ for(guest of tickets) {
     welcomeStr += "\nPlease be sure to leave no seats between you."
     console.log(welcomeStr);
 }
-// 2. There is a concert at the LA County Fairgrounds by the Southland's
+// 2. There is a concert at the LA County Fairgrounds by the Southland's v
 //    hottest Talking Heads tribute band for zombie afficianados,
 //    "The Wailing Deads" (known as "The Walking Deads" until they received
 //    a cease-and-desist). Ticket prices are $50, $65, or $90 for
