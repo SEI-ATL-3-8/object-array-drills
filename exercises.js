@@ -52,7 +52,7 @@ const album3 = {
 //    album3's formats
 // Check out the Array.push method!
 
-
+album3.albumDetails.formats.push(album2.albumDetails.formats[0]);
 
 
 // 4. Change the release date of album3 from a string into a Date object
