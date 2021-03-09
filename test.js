@@ -104,22 +104,29 @@ describe('THE BAND', () => {
 
 //Part 4 
 
-// describe('Conditional Logic', () => {
-//   beforeEach(() => {
-//     var name = "rob";
-
-//   })
-//   it('should log "Talking Heads were a prolific band" for talkingHeadsAlbums.length >= 6', function() {
-//     console.log(name)
-//     // expect(console.log.calledWith("Talking Heads were a prolific band")).to.be.true;;
-//     expect(console.log.calledOnce).to.be.true;
-//   });
-// } )
 
 
+////exercise 1
+
+describe("Conditional Logic", () => {
+  it('should log "Talking Heads were a prolific band" for talkingHeadsAlbums.length >= 6', function () {
+    if (talkingHeadsAlbums.length >= 6) {
+      expect(opinion).to.eq("Talking Heads were a prolific band");
+    } else {
+      expect(opinion).to.eq("Talking heads didnt have much output");
+    }
+  });
+});
 
 
+///exercise 2
 
-
-
-
+describe("Write a conditional to check if numAlbums is even", () => {
+  it("Should check if its divisble by 2" , () => {
+    if (numAlbums % 2 === 0) {
+      expect(result).to.eq("even");
+    } else {
+      expect(result).to.eq("todd");
+    }
+    })
+})
