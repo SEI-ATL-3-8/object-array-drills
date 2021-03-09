@@ -159,28 +159,12 @@ const talkingHeadsAlbums = [
 // Part 4: Conditional Logic
 ////////////////////////////////////////////////
 
-// 1. Write a conditional to console.log "Talking Heads were a prolific band"
+// 1.Use opnion varible too Write a conditional to console.log "Talking Heads were a prolific band"
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
-
-
-
-// if (talkingHeadsAlbums.length >= 6) {
-//   console.log("Talking Heads were a prolific band");
-// }else {
-//   console.log("Talking heads didnt have much output")
-// }
-
-
-
 let opinion;
-if (talkingHeadsAlbums.length >= 6) {
-  opinion = "Talking Heads were a prolific band";
-} else {
-  opinion = "Talking heads didnt have much output";
-}
-console.log(opinion);
+
 
 
                                                                                                                                                                                                 
@@ -189,15 +173,6 @@ console.log(opinion);
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
 
-
-var numAlbums = talkingHeadsAlbums.length;
-var result;
-if (numAlbums % 2 === 0){
-  result = "even";
-} else{
-  result = "odd"
-}
-console.log("the number",numAlbums, "is ", result);
 
 
 // 3. Write conditionals to check if the number of albums in
@@ -210,26 +185,18 @@ console.log("the number",numAlbums, "is ", result);
 //
 //    with Y being the number of albums.
 
-var numAlbums = talkingHeadsAlbums.length;
-
-if (numAlbums === 0) {
-  console.log("The number 0 is not divisible by 2 or 3 ");
-} else if (numAlbums % 2 === 0 && numAlbums % 3 === 0) {
-  console.log(`The number ${numAlbums} is divisible by 2 and 3`);
-} else if (numAlbums % 3 === 0) {
-  console.log(`The number ${numAlbums} is divisible by 3`);
-} else if (numAlbums % 2 === 0) {
-  console.log(`The number ${numAlbums} is divisible by 2`);
-} else {
-  console.log(`The number ${numAlbums} is not divisible by 2 or 3`);
-}
-
-
 
 
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
 //    Make sure it always works!
+
+//you can stop here.
+
+/////////////////////////////////////////////////////
+// BONUS***
+/////////////////////////////////////////////////////
+
 
 /////////////////////////////////////////////////////
 // Part 5: For Loops

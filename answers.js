@@ -153,10 +153,10 @@ band.members.push("Jerry Harrison");
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
-if(talkingHeadsAlbums.length >= 6) {
-    console.log("Talking Heads were a prolific band");
+if (talkingHeadsAlbums.length >= 6) {
+  opinion = "Talking Heads were a prolific band";
 } else {
-    console.log("Talking heads didn't have much output.");
+  opinion = "Talking heads didnt have much output";
 }
 
 // 2. Write a conditional to check if the number of albums in
