@@ -1,6 +1,7 @@
 const expect = chai.expect;
 const assert = chai.assert;
 
+
 //exersice 1
 describe('Retrieve the string "Sire" from album1', () => {
   it("exists", () => {
@@ -17,7 +18,7 @@ describe('Change the title of album1 from Talking Heads to Talking Heads: 77', (
 //exersice 3
 describe("use an array method to add LP to album3s formats", () => {
   it("exists", () => {
-    expect(album2.albumDetails.formats[0]).to.eq("LP");
+    expect(album2.albumDetails.formats[1]).to.eq("LP");
   });
 });
 
@@ -42,7 +43,7 @@ describe(`Add the label "Sire" to album4's details`, () => {
 
 describe(`Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"`, () => {
   it("exists", () => {
-    expect(album6.albumDetails.formats).to.deep.eq(["CD", "cassette", "LP"]);
+    expect(album5.albumDetails.formats).to.deep.eq(["CD", "cassette", "LP"]);
   });
 });
 
@@ -101,9 +102,19 @@ describe('THE BAND', () => {
 });
 
 
+//Part 4 
 
+// describe('Conditional Logic', () => {
+//   beforeEach(() => {
+//     var name = "rob";
 
-
+//   })
+//   it('should log "Talking Heads were a prolific band" for talkingHeadsAlbums.length >= 6', function() {
+//     console.log(name)
+//     // expect(console.log.calledWith("Talking Heads were a prolific band")).to.be.true;;
+//     expect(console.log.calledOnce).to.be.true;
+//   });
+// } )
 
 
 

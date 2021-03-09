@@ -137,24 +137,22 @@ const talkingHeadsAlbums = [
 /////////////////////////////////////////////////////
 
 // 1. Create an object literal called `band`.
-const band = {};
+
 
 // 2. Give it the property `name` and set it to "Talking Heads"
- band.name = "Talking Heads";
+ 
 
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
-band.members = ["David Byrne"];
+
 
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
-band.albums = talkingHeadsAlbums;
+
 
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
-band.members.push("Tiny Weymouth");
-band.members.push("Chris Franz");
-band.members.push("Jerry Harrison");
+
 
 
 ////////////////////////////////////////////////
@@ -165,6 +163,14 @@ band.members.push("Jerry Harrison");
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
+
+if (talkingHeadsAlbums.length >= 6) {
+  console.log("Talking Heads were a prolific band");
+}else {
+  console.log("Talking heads didnt have much output")
+}
+
+
 
 // 2. Write a conditional to check if the number of albums in
 //    talkingHeadsAlbums is odd or even, and then console.log
