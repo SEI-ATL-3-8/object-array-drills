@@ -1,4 +1,3 @@
-console.log("main.js linked!");
 
 ////////////////////////////////////////////////
 // Part 1: Linking
@@ -24,10 +23,10 @@ const album1 = {
 // 1. Retrieve the string "Sire" from album1, and save it as 
 //    albumOneLabel.
 
-
+const albumOneLabel = album1.albumDetails.label;
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
-
+album1.title = album1.title + ": 77";
 
 
 const album2 = {
@@ -51,7 +50,7 @@ const album3 = {
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
-
+album3.albumDetails.formats.push(album2.albumDetails.formats.shift());
 
 
 
