@@ -51,7 +51,7 @@ const album3 = {
 album3.albumDetails.formats.push(album2.albumDetails.formats[0]);
 
 // 4. Change the release date of album3 from a string into a Date object
-album3.released = new Date('August 3, 1979');
+album3.albumDetails.released = new Date('August 3, 1979');
 
 const album4 = {
   title: "Remain in Light",
