@@ -23,11 +23,11 @@ const album1 = {
 
 // 1. Retrieve the string "Sire" from album1, and save it as 
 //    albumOneLabel.
-
+let albumOneLabel = album1.albumDetails.label;
 
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
-
+album1.title = "Talking Heads: 77"
 
 
 const album2 = {
@@ -51,13 +51,14 @@ const album3 = {
 // 3. Access album2's formats array and use an array method to add "LP" to
 //    album3's formats
 // Check out the Array.push method!
-
-
+let albumTwoFormats = album2.albumDetails.formats[0]
+album3.albumDetails.formats.push(albumTwoFormats);
 
 
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
-
+album3.albumDetails.released = new Date (album3.albumDetails.released); // Returns Undefined??
+console.log(album3.albumDetails.released)
 
 const album4 = {
   title: "Remain in Light",
@@ -70,7 +71,7 @@ const album4 = {
 
 
 // 5. Add the label "Sire" to album4's details
-
+album4.albumDetails['label'] = "Sire"
 
 
 const album5 = {
@@ -82,6 +83,7 @@ const album5 = {
 };
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
+album5.albumDetails['formats'] = ["CD", "cassette", "LP"]
 
 const album6 = {
   title: "Little Creatures",
@@ -94,8 +96,9 @@ const album6 = {
 
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
-
-
+let alias = album6.albumDetails.labels
+let aliasPopped = alias.pop()
+alias.push(aliasPopped.toUpperCase())
 
 const album7 = {
   title: "True Stories",
@@ -109,7 +112,7 @@ const album7 = {
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
 // google js array split!
-
+album7.albumDetails.labels = album7.albumDetails.labels.split(', ')
 
 
 const album8 = {
@@ -137,34 +140,34 @@ const talkingHeadsAlbums = [
 /////////////////////////////////////////////////////
 
 // 1. Create an object literal called `band`.
-
+let band = {}
 
 // 2. Give it the property `name` and set it to "Talking Heads"
- 
+ band['name'] = "Talking Heads"
 
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
-
+band['members'] = ["David Byrne"]
 
 // 4. Give it the property `albums` and set it to the array stored in the
 //    variable talkingHeadsAlbums
-
+band['albums'] = talkingHeadsAlbums
 
 // 5. Add "Tiny Weymouth", "Chris Franz" and "Jerry Harrison" to the members
 //    array.
-
+band.members.push("Tiny Weymouth", "Chris Franz", "Jerry Harrison")
 
 
 ////////////////////////////////////////////////
 // Part 4: Conditional Logic
 ////////////////////////////////////////////////
 
-// 1.Use opnion varible too Write a conditional to console.log "Talking Heads were a prolific band"
+// 1.Use opinion varible too Write a conditional to console.log "Talking Heads were a prolific band"
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
-let opinion;
-
+let numAlbums = band.albums.length
+let opinion = numAlbums >= 6 ? "Talking Heads were a prolific band" : "Talking heads didn't have much output."
 
 
                                                                                                                                                                                                 
@@ -173,7 +176,8 @@ let opinion;
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
 
-
+let result = numAlbums % 2 === 0 && numAlbums != 0 ? `even` : `odd`
+//numAlbums % 2 === 0 && numAlbums != 0 ? `The number ${numAlbums} is even` : `The number ${numAlbums} is odd`
 
 // 3. Write conditionals to check if the number of albums in
 //    talkingHeadsAlbums is divisible by either 2 or 3, and then
@@ -185,6 +189,16 @@ let opinion;
 //
 //    with Y being the number of albums.
 
+//numAlbums = 9;
+if (numAlbums % 2 === 0 && numAlbums % 3 === 0 && numAlbums != 0) {
+  console.log(`The number ${numAlbums} is divisible by 2 and 3`)
+} else if(numAlbums % 2 === 0 && numAlbums != 0) {
+  console.log(`The number ${numAlbums} is divisible by 2`)
+} else if(numAlbums % 3 === 0 && numAlbums != 0) {
+  console.log(`The number ${numAlbums} is divisible by 3`)
+} else {
+  console.log(`The number ${numAlbums} is not divisible by 2 or 3`)
+}
 
 
 
@@ -204,12 +218,27 @@ let opinion;
 
 // 1. Use a for loop to print out the name of each Talking Heads album
 
+/* band.albums.forEach(item => {
+  console.log(item);
+}) */
+for (song of band.albums) {
+  console.log(song)
+}
+
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
 //    incrementing sireTally if the album was released under the "Sire" label.
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
+
+let sireTally = 0
+for (song in band.albums) {
+  if (band.albums[song].label = "Sire") {
+    sireTally++
+  }
+}
+console.log(sireTally)
 
 /////////////////////////////////////////////////////
 // Part 7: More Tasks With Conditionals and Iteration
@@ -253,6 +282,31 @@ const tickets = [
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ];
 
+for (i in tickets) {
+  let premuimSeatingInstruction = `Welcome, ${tickets[i].name}! You may sit anywhere in the first 3 rowsof the ${tickets[i].section} section.`
+
+  let standardSeatingInstruction = `Welcome, ${tickets[i].name}! You may sit anywhere in the except the first 3 rows of the ${tickets[i].section} section. Please be sure to leave no seats between you.`
+
+  if (tickets[i].section == "center") {
+    if (tickets[i].type == "premium") {
+      console.log(premuimSeatingInstruction)
+    } else {
+      console.log(standardSeatingInstruction)
+    }
+  } else if (tickets[i].section == "left") {
+    if (tickets[i].type == "premium") {
+      console.log(premuimSeatingInstruction)
+    } else {
+      console.log(standardSeatingInstruction)
+    }
+  } else if (tickets[i].section == "right") {
+    if (tickets[i].type == "premium") {
+      console.log(premuimSeatingInstruction)
+    } else {
+      console.log(standardSeatingInstruction)
+    }
+  }
+}
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
 //    "The Wailing Deads" (known as "The Walking Deads" until they received
@@ -280,15 +334,42 @@ const tickets = [
 //    - {amount: 90.00}                                  => "PREMIER PLUS"
 //    - {amount: 50.00, discount: true,  zombie: true}   => "STANDARD $20 DRINKS"
 
-// const tickets = [
-//   {amount: 50.00, discount: false, zombie: true},
-//   {amount: 60.00, discount: true,  zombie: false},
-//   {amount: 50.00},
-//   {amount: 65.00, discount: true,  zombie: true},
-//   {amount: 90.00, discount: false},
-//   {amount: 50.00, discount: true,  zombie: false},
-//   {amount: 50.00, zombie:   true},
-//   {amount: 80.00, discount: true},
-//   {amount: 90.00},
-//   {amount: 50.00, discount: true}
-// ];
+const concertTickets = [
+   {amount: 50.00, discount: false, zombie: true},
+   {amount: 60.00, discount: true,  zombie: false},
+   {amount: 50.00},
+   {amount: 65.00, discount: true,  zombie: true},
+   {amount: 90.00, discount: false},
+   {amount: 50.00, discount: true,  zombie: false},
+   {amount: 50.00, zombie:   true},
+   {amount: 80.00, discount: true},
+   {amount: 90.00},
+   {amount: 50.00, discount: true}
+];
+for (i in concertTickets) {
+  if (concertTickets[i].amount >= 80) {
+    if(concertTickets[i].discount === false) {
+      console.log("ERROR: INVALID TICKET")
+    } else {
+      console.log("PREMIER PLUS")
+    }
+  } else if (concertTickets[i].amount >= 55.00) {
+    if(concertTickets[i].discount === true || concertTickets[i].zombie === true) {
+      console.log("PREMIER 10$ DRINKS")
+    } else if (concertTickets[i].zombie === true && concertTickets[i].discount === true) {
+      console.log("PREMIER 20$ DRINKS")
+    } else if (concertTickets[i].discount === false && concertTickets[i].zombie === false) {
+      console.log("PREMIER NO DRINKS")
+    } else {
+      console.log("ERROR: INVALID TICKET")
+    } 
+  } else if (concertTickets[i].amount >= 50) {
+    if(concertTickets[i].discount === true || concertTickets[i].zombie === true) {
+    console.log("STANDARD 10$ DRINKS")
+  } else if (concertTickets[i].zombie === true && concertTickets[i].discount === true) {
+    console.log("STANDARD 20$ DRINKS")
+  } else {
+    console.log("STANDARD NO DRINKS")
+    }
+  }
+}
