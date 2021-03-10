@@ -99,7 +99,7 @@ const album7 = {
 
 // 8. Convert album7's 'labels' property from the string value
 //    "Sire, EMI" into the array: ["Sire", "EMI"]
-album7.albumDetails.labels = album7.albumDetails.labels.split(",");
+album7.albumDetails.labels = album7.albumDetails.labels.split(" ");
 
 const album8 = {
   title: "Naked",

@@ -18,7 +18,7 @@ describe('Change the title of album1 from Talking Heads to Talking Heads: 77', (
 //exersice 3
 describe("use an array method to add LP to album3s formats", () => {
   it("exists", () => {
-    expect(album2.albumDetails.formats[1]).to.eq("LP");
+    expect(album3.albumDetails.formats[1]).to.eq("LP");
   });
 });
 
@@ -126,7 +126,7 @@ describe("Write a conditional to check if numAlbums is even", () => {
     if (numAlbums % 2 === 0) {
       expect(result).to.eq("even");
     } else {
-      expect(result).to.eq("todd");
+      expect(result).to.eq("odd");
     }
     })
 })
