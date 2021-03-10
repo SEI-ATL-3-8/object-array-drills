@@ -18,7 +18,7 @@ describe('Change the title of album1 from Talking Heads to Talking Heads: 77', (
 //exersice 3
 describe("use an array method to add LP to album3s formats", () => {
   it("exists", () => {
-    expect(album2.albumDetails.formats[1]).to.eq("LP");
+    expect(album3.albumDetails.formats[1]).to.eq("LP");
   });
 });
 
@@ -43,7 +43,7 @@ describe(`Add the label "Sire" to album4's details`, () => {
 
 describe(`Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"`, () => {
   it("exists", () => {
-    expect(album5.albumDetails.formats).to.deep.eq(["CD", "cassette", "LP"]);
+    expect(album5.albumDetails.formats).to.deep.equal(["CD", "Cassette", "LP"]);
   });
 });
 
@@ -51,7 +51,7 @@ describe(`Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"`, 
 
 describe('Make the label "emi" in album6 all uppercase', () => {
   it("exists", () => {
-    expect(album6.albumDetails.labels).to.deep.eq(["Sire", "EMI"]);
+    expect(album6.albumDetails.labels).to.deep.equal(["Sire", "EMI"]);
   });
 });
 
@@ -59,7 +59,7 @@ describe('Make the label "emi" in album6 all uppercase', () => {
 
 describe(`Convert album7's 'labels' property from the string value`, () => {
   it("exists", () => {
-    expect(album7.albumDetails.labels).to.deep.eq(["Sire", "EMI"]);
+    expect(album7.albumDetails.labels).to.deep.equal(["Sire", "EMI"]);
   });
 });
 
@@ -79,15 +79,15 @@ describe('THE BAND', () => {
   //exercise 2
   it('should have property `name`', () => {
     expect(band).to.have.property('name')
-    expect(band.name).to.eq('Talking Heads') 
+    expect(band.name).to.eq('Talking Heads')
   })
   //exercise 3
-  it('should have property `members`',() =>{
+  it('should have property `members`', () => {
     expect(band).to.have.property(`members`);
     expect(band.members).to.be.an(`array`);
   });
   //exercise 4
-  it('should have property `albums`', () =>{
+  it('should have property `albums`', () => {
     expect(band).to.have.property('albums');
     expect(band.albums).to.eq(talkingHeadsAlbums);
   })
@@ -122,11 +122,11 @@ describe("Conditional Logic", () => {
 ///exercise 2
 
 describe("Write a conditional to check if numAlbums is even", () => {
-  it("Should check if its divisble by 2" , () => {
+  it("Should check if its divisble by 2", () => {
     if (numAlbums % 2 === 0) {
       expect(result).to.eq("even");
     } else {
-      expect(result).to.eq("todd");
+      expect(result).to.eq("odd");
     }
-    })
+  })
 })

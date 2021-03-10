@@ -16,14 +16,14 @@ const album1 = {
   title: "Talking Heads",
   albumDetails: {
     released: new Date("September 16, 1977"),
-    label:    "Sire",
-    formats:  ["LP"]
+    label: "Sire",
+    formats: ["LP"]
   }
 };
 
 // 1. Retrieve the string "Sire" from album1, and save it in a sensibly named
 //    variable.
-const label = album1.albumDetails.label;
+const albumOneLabel = album1.albumDetails.label;
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
 album1.title = "Talking Heads: 77";
@@ -32,8 +32,8 @@ const album2 = {
   title: "More Songs About Buildings and Food",
   albumDetails: {
     released: new Date("July 14, 1978"),
-    label:    "Sire",
-    formats:  ["LP", "8-track"]
+    label: "Sire",
+    formats: ["LP", "8-track"]
   }
 };
 
@@ -41,8 +41,8 @@ const album3 = {
   title: "Fear of Music",
   albumDetails: {
     released: "August 3, 1979",
-    label:    "Sire",
-    formats:  ["Cassette"]
+    label: "Sire",
+    formats: ["Cassette"]
   }
 };
 
@@ -80,8 +80,8 @@ const album6 = {
   title: "Little Creatures",
   albumDetails: {
     released: new Date("June 10, 1985"),
-    labels:   ["Sire", "emi"],
-    formats:  ["CD", "cassette", "LP"]
+    labels: ["Sire", "emi"],
+    formats: ["CD", "cassette", "LP"]
   }
 };
 
@@ -92,8 +92,8 @@ const album7 = {
   title: "True Stories",
   albumDetails: {
     released: new Date("October 7, 1986"),
-    labels:   "Sire, EMI",
-    formats:  ["CD", "cassette", "LP"]
+    labels: "Sire, EMI",
+    formats: ["CD", "cassette", "LP"]
   }
 };
 
@@ -105,8 +105,8 @@ const album8 = {
   title: "Naked",
   albumDetails: {
     released: new Date("March 15, 1988"),
-    label:    ["Sire", "EMI"],
-    formats:  ["CD", "cassette", "LP"]
+    label: ["Sire", "EMI"],
+    formats: ["CD", "cassette", "LP"]
   }
 };
 
@@ -164,10 +164,10 @@ if (talkingHeadsAlbums.length >= 6) {
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
 var numAlbums = talkingHeadsAlbums.length;
-if(numAlbums % 2 === 0) {
-    console.log("The number", numAlbums, "is even");
+if (numAlbums % 2 === 0) {
+  console.log("The number", numAlbums, "is even");
 } else {
-    console.log("The number", numAlbums, "is odd");
+  console.log("The number", numAlbums, "is odd");
 }
 
 // 3. Write conditionals to check if the number of albums in
@@ -181,16 +181,16 @@ if(numAlbums % 2 === 0) {
 //    with Y being the number of albums.
 var numAlbums = talkingHeadsAlbums.length;
 
-if(numAlbums === 0) {
-    console.log("The number 0 is not divisible by 2 or 3 ")
-} else if(numAlbums % 2 === 0 && numAlbums % 3 === 0) {
-    console.log(`The number ${numAlbums} is divisible by 2 and 3`);
-} else if(numAlbums % 3 === 0) {
-    console.log(`The number ${numAlbums} is divisible by 3`);
-} else if(numAlbums % 2 === 0) {
-    console.log(`The number ${numAlbums} is divisible by 2`);
+if (numAlbums === 0) {
+  console.log("The number 0 is not divisible by 2 or 3 ")
+} else if (numAlbums % 2 === 0 && numAlbums % 3 === 0) {
+  console.log(`The number ${numAlbums} is divisible by 2 and 3`);
+} else if (numAlbums % 3 === 0) {
+  console.log(`The number ${numAlbums} is divisible by 3`);
+} else if (numAlbums % 2 === 0) {
+  console.log(`The number ${numAlbums} is divisible by 2`);
 } else {
-    console.log(`The number ${numAlbums} is not divisible by 2 or 3`);
+  console.log(`The number ${numAlbums} is not divisible by 2 or 3`);
 }
 
 // 4. Check your logic above against the numbers: 0, 1, 2, 6, 7, and 9.
@@ -201,8 +201,8 @@ if(numAlbums === 0) {
 /////////////////////////////////////////////////////
 
 // 1. Use a for loop to print out the name of each Talking Heads album
-for(album of talkingHeadsAlbums) {
-    console.log(album.title);
+for (album of talkingHeadsAlbums) {
+  console.log(album.title);
 }
 
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
@@ -212,17 +212,17 @@ for(album of talkingHeadsAlbums) {
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
 let sireTally = 0;
-for(album of talkingHeadsAlbums) {
-    // If the property name is "label"
-    if(album.albumDetails.label === "Sire") {
-        sireTally++;
+for (album of talkingHeadsAlbums) {
+  // If the property name is "label"
+  if (album.albumDetails.label === "Sire") {
+    sireTally++;
+  }
+  // If the property name is "labels"
+  if (album.albumDetails.labels) {
+    if (album.albumDetails.labels.includes("Sire")) {
+      sireTally++;
     }
-    // If the property name is "labels"
-    if(album.albumDetails.labels) {
-        if(album.albumDetails.labels.includes("Sire")) {
-            sireTally++;
-        }
-    }
+  }
 }
 
 /////////////////////////////////////////////////////
@@ -259,31 +259,31 @@ for(album of talkingHeadsAlbums) {
 //     Please be sure to leave no seats between you."
 
 const tickets = [
-  {name: "Boutros Boutros-Ghali", section: "center", type: "premium",  seats: 1},
-  {name: "Ann Richards",          section: "left",   type: "premium",  seats: 2},
-  {name: "George Will",           section: "left",   type: "standard", seats: 2},
-  {name: "Marion Barry",          section: "center", type: "standard", seats: 8},
-  {name: "Warren Christopher",    section: "right",  type: "standard", seats: 1},
-  {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
+  { name: "Boutros Boutros-Ghali", section: "center", type: "premium", seats: 1 },
+  { name: "Ann Richards", section: "left", type: "premium", seats: 2 },
+  { name: "George Will", section: "left", type: "standard", seats: 2 },
+  { name: "Marion Barry", section: "center", type: "standard", seats: 8 },
+  { name: "Warren Christopher", section: "right", type: "standard", seats: 1 },
+  { name: "Bob Dole", section: "center", type: "premium", seats: 3 }
 ];
 
-for(guest of tickets) {
-    let welcomeStr = `Welcome, ${guest.name}!`;
+for (guest of tickets) {
+  let welcomeStr = `Welcome, ${guest.name}!`;
 
-    if(guest.seats === 1) {
-        welcomeStr += " You may sit anywhere"
-    } else {
-        welcomeStr += " You and your party may sit anywhere"
-    }
+  if (guest.seats === 1) {
+    welcomeStr += " You may sit anywhere"
+  } else {
+    welcomeStr += " You and your party may sit anywhere"
+  }
 
-    if(guest.type === 'premium') {
-        welcomeStr += ` in the first 3 rows of the ${guest.section} section.`
-    } else {
-        welcomeStr += ` except the first 3 rows of the ${guest.section} section.`
-    }
+  if (guest.type === 'premium') {
+    welcomeStr += ` in the first 3 rows of the ${guest.section} section.`
+  } else {
+    welcomeStr += ` except the first 3 rows of the ${guest.section} section.`
+  }
 
-    welcomeStr += "\nPlease be sure to leave no seats between you."
-    console.log(welcomeStr);
+  welcomeStr += "\nPlease be sure to leave no seats between you."
+  console.log(welcomeStr);
 }
 
 
@@ -315,50 +315,50 @@ for(guest of tickets) {
 //    - {amount: 50.00, discount: true,  zombie: true}   => "STANDARD $20 DRINKS"
 
 const tickets = [
-  {amount: 50.00, discount: false, zombie: true}, // STANDARD $10 DRINKS
-  {amount: 60.00, discount: true,  zombie: false}, // INVALID
-  {amount: 50.00},  // STANDARD
-  {amount: 65.00, discount: true,  zombie: true}, // PREMIER $20 DRINKS
-  {amount: 90.00, discount: false}, // PREMIER PLUS
-  {amount: 50.00, discount: true,  zombie: false}, // STANDARD $10 DRINKS
-  {amount: 50.00, zombie:   true}, // STANDARD $10 DRINKS
-  {amount: 80.00, discount: true}, // PREMIER PLUS
-  {amount: 90.00}, // PREMIER PLUS
-  {amount: 50.00, discount: true} // STANDARD $10 DRINKS
+  { amount: 50.00, discount: false, zombie: true }, // STANDARD $10 DRINKS
+  { amount: 60.00, discount: true, zombie: false }, // INVALID
+  { amount: 50.00 },  // STANDARD
+  { amount: 65.00, discount: true, zombie: true }, // PREMIER $20 DRINKS
+  { amount: 90.00, discount: false }, // PREMIER PLUS
+  { amount: 50.00, discount: true, zombie: false }, // STANDARD $10 DRINKS
+  { amount: 50.00, zombie: true }, // STANDARD $10 DRINKS
+  { amount: 80.00, discount: true }, // PREMIER PLUS
+  { amount: 90.00 }, // PREMIER PLUS
+  { amount: 50.00, discount: true } // STANDARD $10 DRINKS
 ];
 
-for(ticket of tickets) {
-    let str = "";
-    let drinkCredit = 0;
+for (ticket of tickets) {
+  let str = "";
+  let drinkCredit = 0;
 
-    // Keep track of how much drink credit guest is eligble for 
-    if(ticket.discount) {
-        drinkCredit += 10;
-    }
-    if(ticket.zombie) {
-        drinkCredit += 10;
-    }
+  // Keep track of how much drink credit guest is eligble for 
+  if (ticket.discount) {
+    drinkCredit += 10;
+  }
+  if (ticket.zombie) {
+    drinkCredit += 10;
+  }
 
-    // Use different labling for different price points
-    if(ticket.amount == 50) {
-        str = "STANDARD";
-    } else if(ticket.amount == 65) {
-        str = "PREMIER";
-    } else if (ticket.amount == 90) {
-        console.log("PREMIER PLUS");
-        continue; // Don't need to print anything other than this. Move on to the next guest
-    } else if (ticket.amount == 80 && ticket.discount) {
-        console.log("PREMIER PLUS");
-        continue;
-    } else {
-        console.log("ERROR: INVALID TICKET");
-        continue;
-    }
+  // Use different labling for different price points
+  if (ticket.amount == 50) {
+    str = "STANDARD";
+  } else if (ticket.amount == 65) {
+    str = "PREMIER";
+  } else if (ticket.amount == 90) {
+    console.log("PREMIER PLUS");
+    continue; // Don't need to print anything other than this. Move on to the next guest
+  } else if (ticket.amount == 80 && ticket.discount) {
+    console.log("PREMIER PLUS");
+    continue;
+  } else {
+    console.log("ERROR: INVALID TICKET");
+    continue;
+  }
 
-    // Append drink credits to end of string
-    if(drinkCredit > 0) {
-        str += ` $${drinkCredit} DRINKS`
-    }
+  // Append drink credits to end of string
+  if (drinkCredit > 0) {
+    str += ` $${drinkCredit} DRINKS`
+  }
 
-    console.log(str);
+  console.log(str);
 }
