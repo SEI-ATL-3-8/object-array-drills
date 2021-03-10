@@ -26,7 +26,7 @@ describe("use an array method to add LP to album3s formats", () => {
 
 describe("Change the release date of album3 from a string into a Date object", () => {
   it("exists", () => {
-    expect(album3.released).to.deep.eq(new Date("August 3, 1979"));
+    expect(album3.albumDetails.released).to.deep.eq(new Date("August 3, 1979"));
   });
 });
 
@@ -43,7 +43,7 @@ describe(`Add the label "Sire" to album4's details`, () => {
 
 describe(`Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"`, () => {
   it("exists", () => {
-    expect(album5.albumDetails.formats).to.deep.eq(["CD", "cassette", "LP"]);
+    expect(album5.albumDetails.formats).to.deep.eq(["CD", "Cassette", "LP"]);
   });
 });
 
@@ -124,7 +124,7 @@ describe("Conditional Logic", () => {
 describe("Write a conditional to check if numAlbums is even", () => {
   it("Should check if its divisble by 2" , () => {
     if (numAlbums % 2 === 0) {
-      expect(result).to.eq("even");
+      expect(result).to.eq("The number 8 is even");
     } else {
       expect(result).to.eq("todd");
     }
