@@ -15,18 +15,18 @@ describe('Change the title of album1 from Talking Heads to Talking Heads: 77', (
     expect(album1.title).to.eq("Talking Heads: 77");
   });
 });
-//exersice 3
+//exersice 3 - changed album2 to album3
 describe("use an array method to add LP to album3s formats", () => {
   it("exists", () => {
-    expect(album2.albumDetails.formats[1]).to.eq("LP");
+    expect(album3.albumDetails.formats[1]).to.eq("LP");
   });
 });
 
-//exersice 4
+//exersice 4 - added albumDetails to the album3 string
 
 describe("Change the release date of album3 from a string into a Date object", () => {
   it("exists", () => {
-    expect(album3.released).to.deep.eq(new Date("August 3, 1979"));
+    expect(album3.albumDetails.released).to.deep.eq(new Date("August 3, 1979"));
   });
 });
 
@@ -39,11 +39,11 @@ describe(`Add the label "Sire" to album4's details`, () => {
 });
 
 
-//exersice 6
+//exersice 6 - changed cassette to Cassette
 
 describe(`Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"`, () => {
   it("exists", () => {
-    expect(album5.albumDetails.formats).to.deep.eq(["CD", "cassette", "LP"]);
+    expect(album5.albumDetails.formats).to.deep.eq(["CD", "Cassette", "LP"]);
   });
 });
 
@@ -119,14 +119,14 @@ describe("Conditional Logic", () => {
 });
 
 
-///exercise 2
+///exercise 2 - changed todd to odd
 
 describe("Write a conditional to check if numAlbums is even", () => {
   it("Should check if its divisble by 2" , () => {
     if (numAlbums % 2 === 0) {
       expect(result).to.eq("even");
     } else {
-      expect(result).to.eq("todd");
+      expect(result).to.eq("odd");
     }
     })
 })
