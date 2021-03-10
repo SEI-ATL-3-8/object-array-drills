@@ -237,12 +237,29 @@ if (numAlbums % 2 === 0 && numAlbums % 3 === 0) {
 
 // 1. Use a for loop to print out the name of each Talking Heads album
 
+for (album of talkingHeadsAlbums) {
+  console.log(album)
+}
+
 // 2. Create a variable called `sireTally`, and set it to the integer value 0.
 //    Then use a for-loop to go through all the Talking Heads albums,
 //    incrementing sireTally if the album was released under the "Sire" label.
 //
 //    Warning: some albums have a property `.label`, which is a string, and some
 //    have `.labels`, which is an Array!
+
+let sireTally = 0;
+for(let i = 0; i < talkingHeadsAlbums.length; i++) {
+  if(talkingHeadsAlbums[i].albumDetails.label === "Sire") {
+    sireTally++;
+    console.log(talkingHeadsAlbums[i])
+  }
+  // if(talkingHeadsAlbums[i].albumDetails.labels.includes('Sire')) {
+  //   sireTally++;
+  //   console.log(talkingHeadsAlbums[i])
+  // }
+}
+console.log(sireTally);
 
 /////////////////////////////////////////////////////
 // Part 7: More Tasks With Conditionals and Iteration
@@ -286,6 +303,21 @@ const tickets = [
   {name: "Bob Dole",              section: "center", type: "premium",  seats: 3}
 ];
 
+for(guest in tickets) {
+  if(tickets[guest].type === 'premium' && tickets[guest].seats > 1) {
+    console.log(`Welcome, ${tickets[guest].name}! You and your party may sit anywhere in the first 3 rows of the ${tickets[guest].section} section.`)
+  } else if(tickets[guest].type === 'premium' && tickets[guest].seats === 1) {
+    console.log(`Welcome, ${tickets[guest].name}! You may sit anywhere in the first 3 rows of the ${tickets[guest].section} section.`)
+  } else if(tickets[guest].type === 'standard' && tickets[guest].seats > 1) {
+    console.log(`Welcome, ${tickets[guest].name}! You and your party may sit anywhere except the first 3 rows of the ${tickets[guest].section} section.`)
+  } else if(tickets[guest].type === 'standard' && tickets[guest].seats === 1) {
+    console.log(`Welcome, ${tickets[guest].name}! You may sit anywhere except the first 3 rows of the ${tickets[guest].section} section.`)
+  } else {
+    console.log("You don't have a ticket for this show. Please leave.")
+  }
+}
+
+
 // 2. There is a concert at the LA County Fairgrounds by the Southland's
 //    hottest Talking Heads tribute band for zombie afficianados,
 //    "The Wailing Deads" (known as "The Walking Deads" until they received
@@ -313,15 +345,42 @@ const tickets = [
 //    - {amount: 90.00}                                  => "PREMIER PLUS"
 //    - {amount: 50.00, discount: true,  zombie: true}   => "STANDARD $20 DRINKS"
 
-// const tickets = [
-//   {amount: 50.00, discount: false, zombie: true},
-//   {amount: 60.00, discount: true,  zombie: false},
-//   {amount: 50.00},
-//   {amount: 65.00, discount: true,  zombie: true},
-//   {amount: 90.00, discount: false},
-//   {amount: 50.00, discount: true,  zombie: false},
-//   {amount: 50.00, zombie:   true},
-//   {amount: 80.00, discount: true},
-//   {amount: 90.00},
-//   {amount: 50.00, discount: true}
-// ];
+const WDtickets = [
+  {amount: 50.00, discount: false, zombie: true},
+  {amount: 60.00, discount: true,  zombie: false},
+  {amount: 50.00},
+  {amount: 65.00, discount: true,  zombie: true},
+  {amount: 90.00, discount: false},
+  {amount: 50.00, discount: true,  zombie: false},
+  {amount: 50.00, zombie:   true},
+  {amount: 80.00, discount: true},
+  {amount: 90.00},
+  {amount: 50.00, discount: true}
+];
+
+for(x in WDtickets) {
+  let ticket = WDtickets[x];
+  let discount = ticket.discount
+  let zombie = ticket.zombie
+  str = ''
+
+  if(ticket.amount === 50.00) {
+    str = ('Premier Plus')
+  } else if(ticket.amount === 65.00) {
+    str = ('Premier')
+  } else if(ticket.amount === 90.00) {
+    str = 'Standard'
+    continue
+  } else if(ticket.amount === 80.00 && discount) {
+    str = ('Premier Plus')
+    continue
+  } else {
+    str = ('ERROR: INVALID TICKET')
+    continue
+  }
+
+  if(zombie) {
+    str += ' $10 Drinks'
+  }
+  console.log(str)
+}
