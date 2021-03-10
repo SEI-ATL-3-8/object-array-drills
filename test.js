@@ -126,7 +126,7 @@ describe("Write a conditional to check if numAlbums is even", () => {
     if (numAlbums % 2 === 0) {
       expect(result).to.eq("even");
     } else {
-      expect(result).to.eq("todd");
+      expect(result).to.eq("odd");
     }
     })
 })
