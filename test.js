@@ -79,15 +79,15 @@ describe('THE BAND', () => {
   //exercise 2
   it('should have property `name`', () => {
     expect(band).to.have.property('name')
-    expect(band.name).to.eq('Talking Heads') 
+    expect(band.name).to.eq('Talking Heads')
   })
   //exercise 3
-  it('should have property `members`',() =>{
+  it('should have property `members`', () => {
     expect(band).to.have.property(`members`);
     expect(band.members).to.be.an(`array`);
   });
   //exercise 4
-  it('should have property `albums`', () =>{
+  it('should have property `albums`', () => {
     expect(band).to.have.property('albums');
     expect(band.albums).to.eq(talkingHeadsAlbums);
   })
@@ -122,11 +122,11 @@ describe("Conditional Logic", () => {
 ///exercise 2
 
 describe("Write a conditional to check if numAlbums is even", () => {
-  it("Should check if its divisble by 2" , () => {
+  it("Should check if its divisble by 2", () => {
     if (numAlbums % 2 === 0) {
       expect(result).to.eq("even");
     } else {
       expect(result).to.eq("todd");
     }
-    })
+  })
 })
