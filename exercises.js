@@ -23,7 +23,7 @@ const album1 = {
 
 // 1. Retrieve the string "Sire" from album1, and save it as 
 //    albumOneLabel.
-let albumOneLabel= album1.label
+let albumOneLabel= album1.albumDetails.label
 
 
 // 2. Change the title of album1 from "Talking Heads" to "Talking Heads: 77"
@@ -58,19 +58,20 @@ album3.albumDetails.formats.push(album2.albumDetails.formats[0]);
 // 4. Change the release date of album3 from a string into a Date object
 // Look ahead to album4 for a clue!
 album3.released = new Date('August 3, 1979');
+//album3.albumDetails.released = new Date('August 3, 1979');
 
 const album4 = {
   title: "Remain in Light",
   albumDetails: {
     released: new Date("October 8, 1980"),
-    formats: ["Cassette", "LP"]
+    formats: ["CD", "Cassette", "LP"]
   }
 };
 
 
 
 // 5. Add the label "Sire" to album4's details
-album4.albumDetails.label = "Sire"
+album4.albumDetails.label = "Sire";
 
 
 const album5 = {
@@ -82,7 +83,7 @@ const album5 = {
 };
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
-album5.formats = ["CD","Cassette", "LP" ]
+album5.albumDetails.formats = ["CD","cassette", "LP" ]
 
 const album6 = {
   title: "Little Creatures",
@@ -95,14 +96,14 @@ const album6 = {
 
 // 7. Make the label "emi" in album6 all uppercase
 // google how to make a string uppercase in js!
-album6.labels[1].toUpperCase();
+album6.albumDetails.labels[1] = album6.albumDetails.labels[1].toUpperCase();
 
 
 const album7 = {
   title: "True Stories",
   albumDetails: {
     released: new Date("October 7, 1986"),
-    labels:   "Sire, EMI",
+    labels:   "Sire,EMI",
     formats:  ["CD", "cassette", "LP"]
   }
 };
@@ -164,7 +165,6 @@ band.members.push("Tiny Weymouth","Chris Franz", "Jerry Harrison")
 //    if the Talking Heads have 6 albums or more. Otherwise, console.log
 //    "Talking heads didn't have much output." Use the array of albums
 //    talkingHeadsAlbums above.
-let opinion;
 if (talkingHeadsAlbums.length >= 6) {
   opinion = "Talking Heads were a prolific band";
 } 
@@ -198,7 +198,13 @@ else
 //    - "The number Y is not divisible by 2 or 3",
 //
 //    with Y being the number of albums.
-if(numAlbums % 2 === 0 && numAlbums % 3 ===0 ) {
+var numAlbums = talkingHeadsAlbums.length;
+if(numAlbums === 0)
+{
+  console.log("The number is not divisible by 2 or 3")
+}
+else if(numAlbums % 2 === 0 && numAlbums % 3 ===0 ) 
+{
   console.log("The number", numAlbums, "is divisible by 2 and 3");
 } 
 else if(numAlbums % 2 === 0) 
