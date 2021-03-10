@@ -73,7 +73,7 @@ const album5 = {
 };
 
 // 6. Add a 'formats' array to album 5 and add "CD", "Cassette", and "LP"
-album5.albumDetails.formats = ["CD", "Cassette", "LP"];
+album5.albumDetails.formats = ["CD", "Cassette", "LP" ];
 
 
 const album6 = {
@@ -130,6 +130,8 @@ const band = {};
 
 // 2. Give it the property `name` and set it to "Talking Heads"
 band.name = "Talking Heads";
+
+
 
 // 3. Give it the property `members` and set it to an array with a single
 //    string, "David Byrne", in it.
