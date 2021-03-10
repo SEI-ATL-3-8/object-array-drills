@@ -178,10 +178,10 @@ if (talkingHeadsAlbums.length >= 6){
 //    "The number X is odd" or "The number X is even" with X being
 //    the number of albums.
 let numAlbums = talkingHeadsAlbums.length
-if(numAlbums % 2 === 0) {
+if(numAlbums %2 === 0) {
     console.log("The number", numAlbums, "is even")
 } else {
-    console.log("The number", numAlbums, "is odd")
+    console.log("The number", numAlbums, "is odd") 
 }
 
 
